@@ -32,7 +32,10 @@ public interface CartService {
 
 	void setCurrency(ShopContext shopContext, Cart cart, Customer customer);
 
+	@Deprecated
 	Coupon getCoupon(String couponCode);
+	
+	Coupon getCoupon(String couponCode, Customer customer);
 
 	Integer getIndividualUseCount(String code, String customerId);
 
