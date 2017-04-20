@@ -5,9 +5,6 @@ import java.util.List;
 
 import com.bakerbeach.market.core.api.model.Cart;
 import com.bakerbeach.market.core.api.model.CartItem;
-import com.bakerbeach.market.core.api.model.CartItem.CartItemComponent;
-import com.bakerbeach.market.core.api.model.CartItem.CartItemOption;
-import com.bakerbeach.market.core.api.model.Coupon;
 import com.bakerbeach.market.core.api.model.Customer;
 import com.bakerbeach.market.core.api.model.Messages;
 import com.bakerbeach.market.core.api.model.ShopContext;
@@ -28,22 +25,9 @@ public interface CartService {
 
 	void setCurrency(ShopContext shopContext, Cart cart, Customer customer);
 
-	@Deprecated
-	Coupon getCoupon(String couponCode);
-
-	Coupon getCoupon(String couponCode, Customer customer);
-
-	Integer getIndividualUseCount(String code, String customerId);
-
-	void setIndividualUse(Coupon coupon, String customerId, String orderId, Cart cart, String shopCode)
-			throws CartServiceException;
-
-	@Deprecated
-	void saveCart(Cart cart) throws CartServiceException;
-
 	void saveCart(Customer customer, Cart cart) throws CartServiceException;
 
-	Cart loadCart(String id) throws CartServiceException;
+	Cart loadCart(ShopContext context, String id) throws CartServiceException;
 
 	List<Cart> loadCart(ShopContext context, Customer customer, List<String> codes, List<String> status)
 			throws CartServiceException;
@@ -54,15 +38,9 @@ public interface CartService {
 
 	void merge(Cart storedCart, Cart cart);
 
-	CartItemComponent getNewCartItemComponent(String componentName);
-
-	CartItemOption getNewCartItemOption(String optionCode);
-
 	Cart getInstance(ShopContext shopContext, Customer customer) throws CartServiceException;
 
 	Cart getNewInstance(ShopContext shopContext, Customer customer) throws CartServiceException;
-
-	CartItem getNewCartItem(ShopContext shopContex, String code, BigDecimal itemCount) throws CartServiceException;
 
 	Cart getNewCart(ShopContext shopContex) throws CartServiceException;
 
