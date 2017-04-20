@@ -14,10 +14,6 @@ import com.bakerbeach.market.core.api.model.ShopContext;
 
 public interface CartService {
 
-	Cart getInstance(Customer customer);
-
-	Cart getNewInstance(Customer customer);
-
 	Messages addCartItem(ShopContext shopContext, Cart cart, CartItem newCartItem) throws CartServiceException;
 
 	Messages setQuantity(Cart cart, String id, BigDecimal quantity) throws CartServiceException;
@@ -34,7 +30,7 @@ public interface CartService {
 
 	@Deprecated
 	Coupon getCoupon(String couponCode);
-	
+
 	Coupon getCoupon(String couponCode, Customer customer);
 
 	Integer getIndividualUseCount(String code, String customerId);
@@ -49,22 +45,25 @@ public interface CartService {
 
 	Cart loadCart(String id) throws CartServiceException;
 
-	Cart loadActiveCart(Customer customer) throws CartServiceException;
+	List<Cart> loadCart(ShopContext context, Customer customer, List<String> codes, List<String> status)
+			throws CartServiceException;
 
-	List<Cart> loadCart(Customer customer) throws CartServiceException;
-
-	List<Cart> loadCart(Customer customer, List<String> status) throws CartServiceException;
+	Cart loadActiveCart(ShopContext context, Customer customer) throws CartServiceException;
 
 	void deleteCart(Cart cart) throws CartServiceException;
 
 	void merge(Cart storedCart, Cart cart);
 
-	Cart getNewCart();
-
-	CartItem getNewCartItem(String gtin, BigDecimal itemCount);
-
 	CartItemComponent getNewCartItemComponent(String componentName);
 
 	CartItemOption getNewCartItemOption(String optionCode);
+
+	Cart getInstance(ShopContext shopContext, Customer customer) throws CartServiceException;
+
+	Cart getNewInstance(ShopContext shopContext, Customer customer) throws CartServiceException;
+
+	CartItem getNewCartItem(ShopContext shopContex, String code, BigDecimal itemCount) throws CartServiceException;
+
+	Cart getNewCart(ShopContext shopContex) throws CartServiceException;
 
 }
