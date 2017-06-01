@@ -3,10 +3,10 @@ package com.bakerbeach.market.cart.api.service;
 import java.math.BigDecimal;
 import java.util.List;
 
+import com.bakerbeach.market.commons.Messages;
 import com.bakerbeach.market.core.api.model.Cart;
 import com.bakerbeach.market.core.api.model.CartItem;
 import com.bakerbeach.market.core.api.model.Customer;
-import com.bakerbeach.market.core.api.model.Messages;
 import com.bakerbeach.market.core.api.model.ShopContext;
 
 public interface CartService {

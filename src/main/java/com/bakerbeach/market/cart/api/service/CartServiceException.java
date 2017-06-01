@@ -2,8 +2,8 @@ package com.bakerbeach.market.cart.api.service;
 
 import java.util.Map;
 
+import com.bakerbeach.market.commons.Messages;
 import com.bakerbeach.market.commons.ServiceException;
-import com.bakerbeach.market.core.api.model.Messages;
 
 @SuppressWarnings("serial")
 public class CartServiceException extends ServiceException {
