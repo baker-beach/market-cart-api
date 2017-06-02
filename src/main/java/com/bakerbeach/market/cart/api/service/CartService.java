@@ -6,6 +6,7 @@ import java.util.List;
 import com.bakerbeach.market.commons.Messages;
 import com.bakerbeach.market.core.api.model.Cart;
 import com.bakerbeach.market.core.api.model.CartItem;
+import com.bakerbeach.market.core.api.model.Coupon;
 import com.bakerbeach.market.core.api.model.Customer;
 import com.bakerbeach.market.core.api.model.ShopContext;
 
@@ -43,5 +44,8 @@ public interface CartService {
 	Cart getNewInstance(ShopContext shopContext, Customer customer) throws CartServiceException;
 
 	Cart getNewCart(ShopContext shopContex) throws CartServiceException;
+
+	void setIndividualUse(Coupon coupon, String customerId, String orderId, Cart cart, String shopCode)
+			throws CartServiceException;
 
 }
