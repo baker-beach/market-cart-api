@@ -48,4 +48,6 @@ public interface CartService {
 	void setIndividualUse(Coupon coupon, String customerId, String orderId, Cart cart, String shopCode)
 			throws CartServiceException;
 
+	void setStatus(Customer customer, Cart cart, String status) throws CartServiceException;
+
 }
