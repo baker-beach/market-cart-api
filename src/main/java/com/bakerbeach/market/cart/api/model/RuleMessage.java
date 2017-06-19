@@ -1,6 +1,6 @@
 package com.bakerbeach.market.cart.api.model;
 
-public class CartRuleMessage {
+public class RuleMessage {
 	public enum Type {
 		ERROR, WARNUNG, INFO
 	}
@@ -9,10 +9,10 @@ public class CartRuleMessage {
 	private String key;
 	private Object[] objects;
 
-	public CartRuleMessage() {
+	public RuleMessage() {
 	}
 
-	public CartRuleMessage(Type type, String key, Object... objects) {
+	public RuleMessage(Type type, String key, Object... objects) {
 		this.type = type;
 		this.key = key;
 		this.objects = objects;

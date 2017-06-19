@@ -8,7 +8,7 @@ public interface CartRule {
 
 	CartRule getInstance();
 
-	CartRuleResult apply(CartRuleContext context);
+	RuleResult apply(RuleContext context);
 
 	String getCode();
 

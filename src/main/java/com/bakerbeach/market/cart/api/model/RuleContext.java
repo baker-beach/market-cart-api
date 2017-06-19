@@ -1,9 +1,10 @@
 package com.bakerbeach.market.cart.api.model;
 
-import com.bakerbeach.market.cart.api.service.CartRulesAware;
+import com.bakerbeach.market.cart.api.service.RuleAware;
+import com.bakerbeach.market.core.api.model.Address;
 import com.bakerbeach.market.core.api.model.Cart;
 
-public interface CartRuleContext {
+public interface RuleContext {
 
 	String getShopCode();
 
@@ -21,6 +22,10 @@ public interface CartRuleContext {
 
 	void setCart(Cart cart);
 
-	CartRulesAware getCartRuleAware();
-	
+	void setShippingAddress(Address shippingAddress);
+
+	Address getShippingAddress();
+
+	RuleAware getCartRuleAware();
+
 }

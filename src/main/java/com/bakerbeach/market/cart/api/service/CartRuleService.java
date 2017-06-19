@@ -2,17 +2,19 @@ package com.bakerbeach.market.cart.api.service;
 
 import java.util.List;
 
-import com.bakerbeach.market.cart.api.model.CartRuleContext;
-import com.bakerbeach.market.cart.api.model.CartRuleResult;
+import com.bakerbeach.market.cart.api.model.RuleContext;
+import com.bakerbeach.market.cart.api.model.RuleResult;
 
 public interface CartRuleService {
 
-	CartRuleContext getNewCartRuleContext();
+	RuleContext getNewCartRuleContext();
 
-	List<CartRuleResult> lineChangeHandler(CartRuleContext cartRuleContext);
+	List<RuleResult> lineChangeHandler(RuleContext cartRuleContext);
 
-	List<CartRuleResult> lineDiscountHandler(CartRuleContext cartRuleContext);
+	List<RuleResult> lineDiscountHandler(RuleContext cartRuleContext);
 
-	List<CartRuleResult> cartDiscountHandler(CartRuleContext cartRuleContext);
+	List<RuleResult> cartDiscountHandler(RuleContext cartRuleContext);
+
+	List<RuleResult> applyShippingRules(RuleContext ruleContext);
 
 }
