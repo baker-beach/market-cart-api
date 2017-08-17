@@ -1,29 +1,45 @@
 package com.bakerbeach.market.cart.api.model;
 
-import java.math.BigDecimal;
-import java.util.Date;
 import java.util.Set;
 
-public interface CartRule {
+import com.bakerbeach.market.core.api.model.Cart;
 
-	CartRule getInstance();
+public interface CartRule extends Rule {
 
-	RuleResult apply(RuleContext context);
+	enum Intention {
+		DISCOUNT_ON_GOODS_AND_SERVICES, DISCOUNT_ON_GOODS, SHIPPING, DISCOUNT_ON_SHIPPING, LINE_DISCOUNT, LINE_CHANGES
+	}
 
-	String getCode();
+	Intention getIntention();
 
-	BigDecimal getRate();
+	void setIntention(Intention intention);
 
-	BigDecimal getShippingDiscountRate();
+	RuleResult apply(Cart cart, Intention intention, CartRuleContext context);
+
+	Set<String> getCodes();
 
 	Integer getMaxIndividualUse();
 
+	void setMaxIndividualUse(Integer maxIndividualUse);
+
 	Set<String> getEmails();
+
+	void setEmails(Set<String> emails);
 
 	Boolean getNewsletterSubscription();
 
-	Date getStart();
+	void setNewsletterSubscription(Boolean newsletterSubscription);
 
-	Date getEnd();
+	String getCustomerId();
+
+	void setCustomerId(String customerId);
+
+	Integer getUseCount();
+
+	void setUseCount(Integer useCount);
+
+	Boolean getIsUsed();
+
+	void setIsUsed(boolean isUsed);
 
 }

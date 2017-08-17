@@ -48,6 +48,10 @@ public interface CartService {
 	void setIndividualUse(Coupon coupon, String customerId, String orderId, Cart cart, String shopCode)
 			throws CartServiceException;
 
+	void setRuleUse(ShopContext context, Cart cart, Customer customer, String string) throws CartServiceException;
+
+	void unsetRuleUse(ShopContext context, Cart cart, Customer customer, String string);
+
 	void setStatus(Customer customer, Cart cart, String status) throws CartServiceException;
 
 }

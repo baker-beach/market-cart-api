@@ -1,31 +1,18 @@
 package com.bakerbeach.market.cart.api.model;
 
-import com.bakerbeach.market.cart.api.service.RuleAware;
-import com.bakerbeach.market.core.api.model.Address;
-import com.bakerbeach.market.core.api.model.Cart;
+import java.util.Map.Entry;
+import java.util.Set;
 
 public interface RuleContext {
 
-	String getShopCode();
+	boolean containsKey(Object key);
 
-	void setShopCode(String shopCode);
+	Object get(Object key);
 
-	String getCustomerId();
+	Object put(String key, Object value);
 
-	void setCustomerId(String customerId);
+	Set<String> keySet();
 
-	String getCustomerEmail();
-
-	void setCustomerEmail(String customerEmail);
-
-	Cart getCart();
-
-	void setCart(Cart cart);
-
-	void setShippingAddress(Address shippingAddress);
-
-	Address getShippingAddress();
-
-	RuleAware getCartRuleAware();
+	Set<Entry<String, Object>> entrySet();
 
 }

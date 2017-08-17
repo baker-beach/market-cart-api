@@ -13,4 +13,10 @@ public interface RuleResult {
 
 	boolean hasError();
 
+	Object put(String key, Object value);
+
+	Object get(Object key);
+
+	boolean containsKey(Object key);
+
 }
