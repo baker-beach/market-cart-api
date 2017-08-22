@@ -3,15 +3,13 @@ package com.bakerbeach.market.cart.api.model;
 import java.math.BigDecimal;
 import java.util.Map;
 
-public interface RuleResult {
+import com.bakerbeach.market.commons.Messages;
+
+public interface CartRuleResult {
 
 	Map<String, BigDecimal> getValues();
 
-	RuleMessage getMessage();
-
-	void setMessage(RuleMessage message);
-
-	boolean hasError();
+	Messages getMessages();
 
 	Object put(String key, Object value);
 

@@ -20,6 +20,8 @@ public interface CartService {
 
 	void clear(Cart cart);
 
+	void calculate(ShopContext shopContext, Cart cart, Customer customer, Messages messages);
+
 	void calculate(ShopContext shopContext, Cart cart, Customer customer);
 
 	Messages check(ShopContext shopContext, Cart cart, Customer customer, boolean timing);
@@ -53,5 +55,6 @@ public interface CartService {
 	void unsetRuleUse(ShopContext context, Cart cart, Customer customer, String string);
 
 	void setStatus(Customer customer, Cart cart, String status) throws CartServiceException;
+
 
 }

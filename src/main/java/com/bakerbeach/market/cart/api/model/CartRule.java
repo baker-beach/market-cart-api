@@ -1,20 +1,35 @@
 package com.bakerbeach.market.cart.api.model;
 
+import java.util.Date;
 import java.util.Set;
 
 import com.bakerbeach.market.core.api.model.Cart;
 
-public interface CartRule extends Rule {
+public interface CartRule {
 
 	enum Intention {
 		DISCOUNT_ON_GOODS_AND_SERVICES, DISCOUNT_ON_GOODS, SHIPPING, DISCOUNT_ON_SHIPPING, LINE_DISCOUNT, LINE_CHANGES
 	}
 
+	CartRule getInstance();
+
+	String getId();
+
+	void setId(String id);
+
+	Date getStart();
+
+	void setStart(Date start);
+
+	Date getEnd();
+
+	void setEnd(Date end);
+
 	Intention getIntention();
 
 	void setIntention(Intention intention);
 
-	RuleResult apply(Cart cart, Intention intention, CartRuleContext context);
+	CartRuleResult apply(Cart cart, Intention intention, CartRuleContext context);
 
 	Set<String> getCodes();
 
