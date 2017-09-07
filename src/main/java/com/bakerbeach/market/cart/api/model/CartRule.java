@@ -10,6 +10,10 @@ public interface CartRule {
 	enum Intention {
 		DISCOUNT_ON_GOODS_AND_SERVICES, DISCOUNT_ON_GOODS, SHIPPING, DISCOUNT_ON_SHIPPING, LINE_DISCOUNT, LINE_CHANGES
 	}
+	
+	enum Status {
+		ENABLED,DISABLED,UNDEFINED
+	}
 
 	CartRule getInstance();
 
@@ -29,6 +33,10 @@ public interface CartRule {
 
 	void setIntention(Intention intention);
 
+	Status getStatus();
+	
+	void setStatus(Status status);
+	
 	CartRuleResult apply(Cart cart, Intention intention, CartRuleContext context);
 
 	Set<String> getCodes();

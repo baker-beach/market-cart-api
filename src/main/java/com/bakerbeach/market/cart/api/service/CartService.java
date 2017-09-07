@@ -1,8 +1,11 @@
 package com.bakerbeach.market.cart.api.service;
 
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.List;
 
+import com.bakerbeach.market.cart.api.model.CartRule;
+import com.bakerbeach.market.commons.Message;
 import com.bakerbeach.market.commons.Messages;
 import com.bakerbeach.market.core.api.model.Cart;
 import com.bakerbeach.market.core.api.model.CartItem;
@@ -56,5 +59,10 @@ public interface CartService {
 
 	void setStatus(Customer customer, Cart cart, String status) throws CartServiceException;
 
+	Messages checkCartRules(Cart cart, Customer customer, Date date);
+
+	Message checkCartRule(String key, CartRule rule, Date date, Customer customer);
+
+	void addCodeRule(Cart cart, String key, CartRule rule);
 
 }
