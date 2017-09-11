@@ -3,6 +3,7 @@ package com.bakerbeach.market.cart.api.service;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import com.bakerbeach.market.cart.api.model.CartRule;
 import com.bakerbeach.market.commons.Message;
@@ -64,5 +65,11 @@ public interface CartService {
 	Message checkCartRule(String key, CartRule rule, Date date, Customer customer);
 
 	void addCodeRule(Cart cart, String key, CartRule rule);
+
+	CartRule getCodeRuleInstance(String couponCode);
+
+	void clearCodeRules(Cart cart);
+
+	Map<String, CartRule> getCodeRules(Cart cart);
 
 }

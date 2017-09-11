@@ -12,12 +12,14 @@ public interface CartRuleSet {
 
 	Map<String, CartRule> getAll();
 
-//	CartRule add(CartRule rule);
-
-//	void addAll(Collection<CartRule> rules);
-
-	CartRule put(String key, CartRule rule);
-
 	boolean containsKey(Object key);
+
+	void addCodeRule(String key, CartRule rule);
+
+	void addCommonRule(String key, CartRule rule);
+
+	void clearCodeRules();
+
+	Map<String, CartRule> getCodeRules();
 
 }
