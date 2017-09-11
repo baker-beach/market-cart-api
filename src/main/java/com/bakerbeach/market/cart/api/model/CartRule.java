@@ -12,7 +12,7 @@ public interface CartRule {
 	}
 	
 	enum Status {
-		ENABLED,DISABLED,UNDEFINED
+		ENABLED,DISABLED,FAILED,PASSED,UNDEFINED
 	}
 
 	CartRule getInstance();
