@@ -2,9 +2,9 @@ package com.bakerbeach.market.cart.api.model;
 
 import java.util.Collection;
 import java.util.Date;
+import java.util.Map;
 import java.util.Set;
 
-import com.bakerbeach.market.cart.api.model.CartRule.Intention;
 import com.bakerbeach.market.commons.Message;
 import com.bakerbeach.market.core.api.model.Cart;
 
@@ -40,7 +40,7 @@ public interface CartRule {
 
 	void setStatus(Status status);
 
-	CartRuleResult apply(Cart cart, Intention intention, CartRuleContext context);
+	void apply(Cart cart, Intention intention, CartRuleContext context, Map<String, CartRuleResult> results);
 
 	Set<String> getCodes();
 
