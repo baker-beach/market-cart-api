@@ -40,7 +40,7 @@ public interface CartRule {
 
 	void setStatus(Status status);
 
-	void apply(Cart cart, Intention intention, CartRuleContext context, Map<String, CartRuleResult> results);
+	CartRuleResult apply(Cart cart, Intention intention, CartRuleContext context, Map<String, CartRuleResult> results);
 
 	Set<String> getCodes();
 
