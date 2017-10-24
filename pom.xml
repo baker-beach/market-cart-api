@@ -10,7 +10,7 @@
 	<artifactId>market-cart-api</artifactId>
 	<name>market-cart-api</name>
 	<packaging>jar</packaging>
-	<version>3.0.4</version>
+	<version>3.0.5</version>
 	<properties>
 	</properties>
 	<dependencies>
