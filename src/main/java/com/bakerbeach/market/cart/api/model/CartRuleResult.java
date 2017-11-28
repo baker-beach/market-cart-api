@@ -18,5 +18,9 @@ public interface CartRuleResult {
 	boolean containsKey(Object key);
 
 	String getId();
+	
+	String getCode();
+
+	void setCode(String code);
 
 }
