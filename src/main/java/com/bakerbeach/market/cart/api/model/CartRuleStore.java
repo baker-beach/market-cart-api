@@ -5,11 +5,12 @@ import java.util.Set;
 
 public interface CartRuleStore {
 
-	CartRule getInstance(String id);
+	RuleInstance getInstance(String id);
 
-	CartRule getCodeRuleInstance(String code);
+	@Deprecated
+	RuleInstance getCodeRuleInstance(String code);
 
-	Collection<CartRule> getCommonRuleInstances();
+	Collection<RuleInstance> getCommonRuleInstances();
 
 	Set<String> getCommonRuleIds();
 

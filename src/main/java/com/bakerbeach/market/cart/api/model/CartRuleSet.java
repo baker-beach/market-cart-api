@@ -1,25 +1,30 @@
 package com.bakerbeach.market.cart.api.model;
 
+import java.util.Date;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
 public interface CartRuleSet {
 
-	CartRule get(Object key);
+	RuleInstance get(Object key);
 
-	Set<Entry<String, CartRule>> entrySet();
+	Set<Entry<String, RuleInstance>> entrySet();
 
-	Map<String, CartRule> getAll();
+	Map<String, RuleInstance> getAll();
 
 	boolean containsKey(Object key);
 
-	void addCodeRule(String key, CartRule rule);
+	void addCodeRule(String key, RuleInstance rule);
 
-	void addCommonRule(String key, CartRule rule);
+	void addCommonRule(String key, RuleInstance rule);
 
 	void clearCodeRules();
 
-	Map<String, CartRule> getCodeRules();
+	Map<String, RuleInstance> getCodeRules();
+
+	Date getUpdatedAt();
+
+	void setUpdatedAt(Date updatedAt);
 
 }

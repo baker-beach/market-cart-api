@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-import com.bakerbeach.market.cart.api.model.CartRule;
+import com.bakerbeach.market.cart.api.model.RuleInstance;
 import com.bakerbeach.market.commons.Message;
 import com.bakerbeach.market.commons.Messages;
 import com.bakerbeach.market.core.api.model.Cart;
@@ -62,14 +62,14 @@ public interface CartService {
 
 	Messages checkCartRules(Cart cart, Customer customer, Date date);
 
-	Message checkCartRule(String key, CartRule rule, Date date, Customer customer);
+	Message checkCartRule(String key, RuleInstance rule, Date date, Customer customer);
 
-	void addCodeRule(Cart cart, String key, CartRule rule);
+	void addCodeRule(Cart cart, String key, RuleInstance rule);
 
-	CartRule getCodeRuleInstance(String couponCode);
+	RuleInstance getCodeRuleInstance(String couponCode);
 
 	void clearCodeRules(Cart cart);
 
-	Map<String, CartRule> getCodeRules(Cart cart);
+	Map<String, RuleInstance> getCodeRules(Cart cart);
 
 }
