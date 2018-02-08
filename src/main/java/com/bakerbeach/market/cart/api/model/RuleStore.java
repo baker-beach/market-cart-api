@@ -4,10 +4,10 @@ import java.util.Collection;
 
 public interface RuleStore {
 
-	RuleInstance instanceById(String id);
+	RuleInstance instanceById(String shopCode, String id);
 
-	RuleInstance instanceByCode(String code);
+	RuleInstance instanceByCode(String shopCode, String code);
 
-	Collection<RuleInstance> commonInstances();
+	Collection<RuleInstance> commonInstances(String shopCode);
 
 }

@@ -60,16 +60,16 @@ public interface CartService {
 
 	void setStatus(Customer customer, Cart cart, String status) throws CartServiceException;
 
-	Messages checkCartRules(Cart cart, Customer customer, Date date);
+	Messages checkCartRules(String shopCode, Cart cart, Customer customer, Date date);
 
 	Message checkCartRule(String key, RuleInstance rule, Date date, Customer customer);
 
-	void addCodeRule(Cart cart, String key, RuleInstance rule);
+	void addCodeRule(String shopCode, Cart cart, String key, RuleInstance rule);
 
-	RuleInstance getCodeRuleInstance(String couponCode);
+	RuleInstance getCodeRuleInstance(String shopCode, String code);
 
-	void clearCodeRules(Cart cart);
+	void clearCodeRules(String shopCode, Cart cart);
 
-	Map<String, RuleInstance> getCodeRules(Cart cart);
+	Map<String, RuleInstance> getCodeRules(String shopCode, Cart cart);
 
 }
