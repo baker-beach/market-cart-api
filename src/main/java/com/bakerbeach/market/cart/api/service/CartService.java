@@ -62,14 +62,29 @@ public interface CartService {
 
 	Messages checkCartRules(String shopCode, Cart cart, Customer customer, Date date);
 
+	@Deprecated
+	Messages checkCartRules(Cart cart, Customer customer, Date date);
+
 	Message checkCartRule(String key, RuleInstance rule, Date date, Customer customer);
 
 	void addCodeRule(String shopCode, Cart cart, String key, RuleInstance rule);
 
+	@Deprecated
+	void addCodeRule(Cart cart, String key, RuleInstance rule);
+
 	RuleInstance getCodeRuleInstance(String shopCode, String code);
+
+	@Deprecated
+	RuleInstance getCodeRuleInstance(String code);
 
 	void clearCodeRules(String shopCode, Cart cart);
 
+	@Deprecated
+	void clearCodeRules(Cart cart);
+
 	Map<String, RuleInstance> getCodeRules(String shopCode, Cart cart);
+
+	@Deprecated
+	Map<String, RuleInstance> getCodeRules(Cart cart);
 
 }
